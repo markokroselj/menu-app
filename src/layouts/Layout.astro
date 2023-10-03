@@ -7,20 +7,29 @@ type Props = {
     description?: string;
 };
 
-const { title = "Fri menza", description = "Jedilnik FRI menze"} = Astro.props;
+const { title = "Fri menza", description = "Jedilnik FRI menze" } = Astro.props;
 ---
 
 <html lang="si">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content={description}>
+        <meta name="description" content={description} />
+        <!-- icons -->
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/site.webmanifest">
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#ef4444">
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <meta name="msapplication-TileColor" content="#ef4444">
+        <meta name="msapplication-config" content="/images/browserconfig.xml">
+        <meta name="theme-color" content="#ef4444">
         <title>{title}</title>
         <ViewTransitions />
     </head>
-    <body class="flex flex-col  min-h-[100dvh] bg-pattern bg-cover">
+    <body class="flex flex-col min-h-[100dvh] bg-pattern bg-cover">
         <Header />
         <main class="p-3 flex-grow">
             <slot />

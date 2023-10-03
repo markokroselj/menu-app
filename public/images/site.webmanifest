@@ -1,0 +1,14 @@
+{
+    "name": "Fri menza jedilnik",
+    "short_name": "Fri menza jedilnik",
+    "icons": [
+        {
+            "src": "/images/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ef4444",
+    "background_color": "#ef4444",
+    "display": "standalone"
+}
