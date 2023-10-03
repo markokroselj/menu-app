@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DailyMenu from "../components/DailyMenu.astro";
+import { getDay, getFormattedDate, getWeekNumber } from "../js/utlis.ts";
+import type { MenuData } from "../types/data.ts";
+
+const response = await fetch(import.meta.env.MODE === "DEV" ? import.meta.env.DEV_API : import.meta.env.PROD_API);
+const { weeks } = (await response.json()) as MenuData;
+
+const weekNumber = getWeekNumber();
+const formattedDate = getFormattedDate();
+
+const thisWeek = weeks[weekNumber];
+const todaysMenu = thisWeek.menuInAWeek[formattedDate];
+
+const keys = Object.keys(thisWeek.menuInAWeek);
+
+function getRowBackground(date: string, currentDate: string) {
+	if (new Date(date) < new Date(currentDate)) {
+		return "bg-gray-200";
+	}
+	if (date === currentDate) {
+		return "bg-lime-400";
+	} else {
+		return "bg-slate";
+	}
+}
+
+---
+<Layout>
+<DailyMenu date={formattedDate} todaysMenu={todaysMenu} />
+	
+	<h1 class="text-2xl my-5">Tedenski meni - {thisWeek.fromToDate}</h1>
+	{ 	
+	<table
+		class="my-0 lg:my-2 shadow-lg border border-dotted border-gray-800 border-collapse overflow-x-auto"
+	>
+		{
+			keys.map((item) => (
+				<tr
+					class={getRowBackground(item, formattedDate)}
+					class="border border-dotted border-gray-800 p-1 overflow-x-auto"
+				>
+					<th class="border border-dotted border-gray-800 font-medium w-screen lg:w-fit  whitespace-nowrap">
+						<a href={`/daily/${item}`} class="lg:hover:underline inline-block px-20 py-3  lg:px-10 lg:py-1">{getDay(item)}</a>
+					</th>
+					{thisWeek.menuInAWeek[item].map((x) => (
+						<td class="hidden lg:table-cell border border-dotted border-gray-800 p-1">
+							{x}
+						</td>
+					))}
+				</tr>
+			))
+		}
+	</table>
+</Layout>

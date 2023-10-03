@@ -1,0 +1,28 @@
+---
+import type { MenuData } from "../types/data.ts";
+import { Image } from "astro:assets";
+import sadge from "../images/sadge.png";
+import lekohungy from "../images/lekohungy.webp";
+import { getFormattedDate, getWeekNumber, getDay } from "../js/utlis.ts";
+
+const { todaysMenu, date } = Astro.props;
+---
+{
+(date == getFormattedDate()) ? <h1 class="text-2xl flex items-end gap-1">Današnji meni 
+    <Image src={lekohungy} alt=":sadge:" width={35} height={35} />
+    </h1>
+ : <h1 class="text-2xl flex items-end gap-1">{getDay(date)}
+    <Image src={lekohungy} alt=":lekohungry:" width={35} height={35} />
+    </h1>}
+ 
+{
+    todaysMenu ? (
+        <ul class="list-disc w-fit shadow-lg p-2 list-inside rounded-md">
+            {todaysMenu.map((item: string) => (
+                <li class="">{item}</li>
+            ))}
+        </ul>
+    ) : (
+        <p class="flex items-end gap-1">Danes ni nč <Image src={sadge} alt=":sadge:" width={35} height={35} /></p>
+    )
+}

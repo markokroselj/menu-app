@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import type { MenuData } from "../../types/data.ts";
+import DailyMenu from "../../components/DailyMenu.astro"
+import { getFormattedDate, getWeekNumber } from "../../js/utlis.ts";
+const response = await fetch(import.meta.env.MODE === "DEV" ? import.meta.env.DEV_API : import.meta.env.PROD_API);
+const { weeks } = (await response.json()) as MenuData;
+
+
+export async function getStaticPaths() {
+const response = await fetch(import.meta.env.MODE === "DEV" ? import.meta.env.DEV_API : import.meta.env.PROD_API);
+
+  const { weeks } = (await response.json()) as MenuData;
+
+
+  return Object.keys(weeks[getWeekNumber()].menuInAWeek).map((element) => ({
+    params: { date: element },
+  }));
+
+}
+
+const { date } = Astro.params;
+---
+
+<Layout title={`Fri menza - ${date}`} description={`Jedilnik Fri menze za ${date}`}>
+  <DailyMenu date={date} todaysMenu={weeks[getWeekNumber()].menuInAWeek[date]}/>
+</Layout>
