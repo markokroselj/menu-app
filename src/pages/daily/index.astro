@@ -1,0 +1,7 @@
+---
+import { getFormattedDate } from "../../js/utlis.ts";
+
+const url = `${import.meta.env.BASE_URL}\daily\\${getFormattedDate()}`;
+---
+
+<meta http-equiv="refresh" content={`0; url=${url}`} />
