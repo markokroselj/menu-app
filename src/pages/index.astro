@@ -46,7 +46,7 @@ function getRowBackground(date: string, currentDate: string) {
 					</th>
 					{thisWeek.menuInAWeek[item].map((x) => (
 						<td class="hidden lg:table-cell border border-dotted border-gray-800 p-1">
-							{x}
+							{x.replaceAll("/", ",")}
 						</td>
 					))}
 				</tr>

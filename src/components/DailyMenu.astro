@@ -19,7 +19,7 @@ const { todaysMenu, date } = Astro.props;
     todaysMenu ? (
         <ul class="list-disc w-fit shadow-lg p-2 list-inside rounded-md">
             {todaysMenu.map((item: string) => (
-                <li class="">{item}</li>
+                <li class="">{item.replaceAll("/", ",")}</li>
             ))}
         </ul>
     ) : (
