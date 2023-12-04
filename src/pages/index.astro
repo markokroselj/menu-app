@@ -4,7 +4,7 @@ import DailyMenu from "../components/DailyMenu.astro";
 import { getDay, getFormattedDate, getWeekNumber } from "../js/utlis.ts";
 import type { MenuData } from "../types/data.ts";
 
-const response = await fetch(import.meta.env.MODE === "DEV" ? import.meta.env.DEV_API : import.meta.env.PROD_API);
+const response = await fetch(import.meta.env.MODE === "development" ? import.meta.env.DEV_API : import.meta.env.PROD_API);
 const { weeks } = (await response.json()) as MenuData;
 
 const weekNumber = getWeekNumber();
