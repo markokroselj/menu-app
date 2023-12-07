@@ -1,0 +1,37 @@
+{
+    "name": "Fri menza jedilnik",
+    "short_name": "Fri menza jedilnik",
+    "start_url": "/",
+    "lang": "sl",
+    "theme_color": "#ef4444",
+    "background_color": "#ef4444",
+    "display": "standalone",
+    "orientation": "portrait",
+    "description": "Dnevni in tedenski jedilnik FRI menze.",
+    "icons": [
+        {
+            "src": "/images/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/images/logo-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/images/maskable_icon_x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/images/logo-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}

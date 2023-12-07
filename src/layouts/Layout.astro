@@ -20,7 +20,7 @@ const { title = "Fri menza", description = "Jedilnik FRI menze" } = Astro.props;
         <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-        <link rel="manifest" href="/images/site.webmanifest">
+        <link rel="manifest" href="/site.webmanifest">
         <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#ef4444">
         <link rel="shortcut icon" href="/images/favicon.ico">
         <meta name="msapplication-TileColor" content="#ef4444">
@@ -31,7 +31,7 @@ const { title = "Fri menza", description = "Jedilnik FRI menze" } = Astro.props;
     </head>
     <body class="flex flex-col min-h-[100dvh] bg-pattern bg-cover">
         <Header />
-        <main class="p-3 flex-grow">
+        <main class="p-3 flex-grow" transition:animate="slide">
             <slot />
         </main>
         <Footer />
