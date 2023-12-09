@@ -42,7 +42,7 @@ function getRowBackground(date: string, currentDate: string) {
 					class="border border-dotted border-gray-800 p-1 overflow-x-auto"
 				>
 					<th class="border border-dotted border-gray-800 font-medium w-screen lg:w-fit  whitespace-nowrap">
-						<a href={`/daily/${item}`} class="lg:hover:underline inline-block px-20 py-3  lg:px-10 lg:py-1">{getDay(item)}</a>
+						<a href={`/daily/${item}`} class="lg:hover:underline inline-block pwa:w-full px-20 py-3  lg:px-10 lg:py-1">{getDay(item)}</a>
 					</th>
 					{thisWeek.menuInAWeek[item].map((x) => (
 						<td class="hidden lg:table-cell border border-dotted border-gray-800 p-1">
