@@ -29,7 +29,7 @@ const { title = "Fri menza", description = "Jedilnik FRI menze" } = Astro.props;
         <title>{title}</title>
         <ViewTransitions />
     </head>
-    <body class="flex flex-col min-h-[100dvh] bg-pattern bg-cover">
+    <body class="flex flex-col min-h-[100dvh] pwa:touch-pan-y">
         <Header />
         <main class="p-3 flex-grow" transition:animate="slide">
             <slot />
