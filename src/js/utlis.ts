@@ -15,7 +15,7 @@ export function getWeekNumber() {
     const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
     const dayOfWeek = firstDayOfMonth.getDay();
 
-    return Math.ceil((currentDay + dayOfWeek) / 7) - 1;
+    return Math.ceil((currentDay + dayOfWeek) / 7);
 }
 
 export function getDay(date: string) {
