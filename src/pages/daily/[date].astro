@@ -13,7 +13,7 @@ const response = await fetch(import.meta.env.MODE === "development" ? import.met
   const { weeks } = (await response.json()) as MenuData;
 
 
-  return Object.keys(weeks[getWeekNumber()].menuInAWeek).map((element) => ({
+  return Object.keys(weeks[getWeekNumber(weeks)].menuInAWeek).map((element) => ({
     params: { date: element },
   }));
 
@@ -23,5 +23,5 @@ const { date } = Astro.params;
 ---
 
 <Layout title={`Fri menza - ${date}`} description={`Jedilnik Fri menze za ${date}`}>
-  <DailyMenu date={date} todaysMenu={weeks[getWeekNumber()].menuInAWeek[date]}/>
+  <DailyMenu date={date} todaysMenu={weeks[getWeekNumber(weeks)].menuInAWeek[date]}/>
 </Layout>
