@@ -16,7 +16,7 @@ function isTodayInRange(fromToDateStr: string) {
   today.setHours(0, 0, 0, 0); 
 
   
-  const dateRangeRegex = /(\w+)\s(\d{1,2}\.\d{1,2})\s-\s(\w+)\s(\d{1,2}\.\d{1,2})/;
+  const dateRangeRegex = /(\w+)\s(\d{1,2})\.?\s?(\d{1,2})\.?\s-\s(\w+)\s(\d{1,2})\.?\s?(\d{1,2})\.?/;
   const match = fromToDateStr.match(dateRangeRegex);
 
   if (!match) {
