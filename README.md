@@ -4,9 +4,9 @@
 
  [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 
-Menu data is retrieved from a publicly available PDF.
-
 For a frontend to display current day's and current week's menu without shiping unnessery JavaScript to a client, a selfhosted cron job is scheduled every day to trigger a rebuild.
+
+Menu data is retrieved from a publicly available PDF.
 
 👀 See [backend](https://github.com/markokroselj/menu-app-backend#menu-app-backend) for more info.
 
